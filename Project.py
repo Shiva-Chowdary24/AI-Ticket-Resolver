@@ -5,7 +5,7 @@ import streamlit as st
 hf_token = st.secrets["HF_TOKEN"]
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_huggingface import ChatHuggingFace,HuggingFaceEndpoint
-llmg=ChatHuggingFace(llm=HuggingFaceEndpoint(repo_id='openai/gpt-oss-120b'))
+llmg=ChatHuggingFace(llm=HuggingFaceEndpoint(repo_id='HuggingFaceH4/zephyr-7b-beta'))
 
 documents = [
 "Network issue.\n"
@@ -100,5 +100,6 @@ if st.button("Submit"):
     "question":{query}
 })
     st.write(response1.content)
+
 
 
