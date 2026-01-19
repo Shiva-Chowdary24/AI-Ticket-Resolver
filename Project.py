@@ -1,11 +1,12 @@
 import os
 from dotenv import load_dotenv
 load_dotenv()
-os.getenv('hf_token')
+import streamlit as st 
+hf_token = st.secrets["HF_TOKEN"]
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_huggingface import ChatHuggingFace,HuggingFaceEndpoint
 llmg=ChatHuggingFace(llm=HuggingFaceEndpoint(repo_id='openai/gpt-oss-120b'))
-import streamlit as st
+
 documents = [
 "Network issue.\n"
 "Restart the router, check cables, or contact your internet provider."
@@ -99,4 +100,5 @@ if st.button("Submit"):
     "question":{query}
 })
     st.write(response1.content)
+
 
