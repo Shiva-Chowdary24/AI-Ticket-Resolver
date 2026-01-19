@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+streamlit
+langchain
+langchain-core
+langchain-community
+langchain-huggingface
+langgraph-supervisor
+dotenv
+pydantic
+typing
+pillow
